@@ -1,0 +1,151 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  display: inline-block;
+}
+
+.loading .icon {
+  animation: spin 1s linear infinite;
+}
+
+/* Additional responsive styles */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .summary-card {
+    padding: 20px;
+  }
+  
+  .summary-card .value {
+    font-size: 1.5rem;
+  }
+  
+  .info-section {
+    padding: 20px;
+  }
+}
+
+/* Enhanced table styles */
+.beacon-table {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.beacon-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.beacon-table th {
+  background: none;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+/* Smooth transitions */
+.summary-card,
+.info-section,
+.beacon-table {
+  transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading animation */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.loading p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+/* Error styling */
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+/* Button enhancements */
+.refresh-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.refresh-button:active {
+  transform: translateY(1px);
+}
+
+/* Status badge improvements */
+.status {
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Highlight new payload row */
+.status.new {
+  background-color: #d4edda; /* light green */
+  color: #155724;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Signal strength indicators */
+.signal-strength {
+  position: relative;
+  padding-left: 20px;
+}
+
+.signal-strength::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.signal-strength.good::before {
+  background-color: #28a745;
+}
+
+.signal-strength.warning::before {
+  background-color: #ffc107;
+}
+
+.signal-strength.critical::before {
+  background-color: #dc3545;
+} 
